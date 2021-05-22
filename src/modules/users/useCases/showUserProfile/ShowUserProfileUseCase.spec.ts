@@ -39,7 +39,7 @@ describe('Show User Profile', () => {
 
   it('should not be able to show an user', async () => {
 
-    expect(async () => {
+    await expect(async () => {
 
       const user = await createUserUseCase.execute({
         name: "User Name",

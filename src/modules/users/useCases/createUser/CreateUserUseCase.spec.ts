@@ -27,7 +27,7 @@ describe('Create User', () => {
 
   it('should not be able to create a new user two times', async () => {
 
-    expect(async () => {
+    await expect(async () => {
       await createUserUseCase.execute({
         name: "User Name",
         email: "user@email.com",

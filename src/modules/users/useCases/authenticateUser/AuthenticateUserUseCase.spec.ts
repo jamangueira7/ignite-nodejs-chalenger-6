@@ -20,6 +20,7 @@ describe('Authenticate User', () => {
   });
 
   it("should be able to authenticate an user", async () => {
+
     const user: ICreateUserDTO = {
       email: 'user@test.com',
       password: '1234',
@@ -37,7 +38,8 @@ describe('Authenticate User', () => {
   });
 
   it("should not be able to authenticate a none existing user", async () => {
-    expect(async () => {
+
+    await expect(async () => {
       const result = await authenticateUserUseCase.execute({
         email: 'user@test.com',
         password: '1234',
@@ -46,7 +48,8 @@ describe('Authenticate User', () => {
   });
 
   it("should not be able to authenticate with incorrect password", async () => {
-    expect(async () => {
+
+    await expect(async () => {
       const user: ICreateUserDTO = {
         email: 'user@test.com',
         password: '1234',
